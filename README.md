@@ -92,4 +92,7 @@ An intelligent, real-time system for tracking and re-identifying players in spor
 3. **Observe** real-time player detection and re-identification
 4. **Review** detailed analytics and tracking results through the dashboard
 
----
+---                                                                                                                                                                                                                                                                            
+##  Output                                                                                                                                                                                                                                                                     
+<img width="1920" height="1032" alt="Screenshot 2025-07-10 223911" src="https://github.com/user-attachments/assets/c0432b84-0f50-4013-9d06-b2e58b022d51" />
+<img width="1920" height="1032" alt="Screenshot 2025-07-10 223920" src="https://github.com/user-attachments/assets/da585960-4dcc-449a-aece-715a448fa0ec" />
