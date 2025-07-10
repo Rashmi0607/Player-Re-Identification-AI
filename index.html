@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Re-Identification System</title>
+    <link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🏈 Player Re-Identification System</h1>
+            <p>Advanced computer vision for sports analytics</p>
+        </header>
+
+        <main class="main-content">
+            <div class="upload-section">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">📹</div>
+                    <h3>Upload Video File</h3>
+                    <p>Select a 15-second sports video (MP4 format)</p>
+                    <input type="file" id="videoInput" accept="video/mp4" hidden>
+                    <button class="upload-btn" onclick="document.getElementById('videoInput').click()">
+                        Choose Video File
+                    </button>
+                </div>
+            </div>
+
+            <div class="processing-section" id="processingSection" style="display: none;">
+                <div class="video-container">
+                    <video id="videoPlayer" controls muted></video>
+                    <canvas id="outputCanvas"></canvas>
+                </div>
+
+                <div class="controls">
+                    <button id="processBtn" class="process-btn">
+                        🔍 Start Player Tracking
+                    </button>
+                    <button id="pauseBtn" class="control-btn" disabled>⏸️ Pause</button>
+                    <button id="resetBtn" class="control-btn">🔄 Reset</button>
+                </div>
+
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <span class="progress-text" id="progressText">Ready to process</span>
+                </div>
+            </div>
+
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <h3>📊 Tracking Results</h3>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" id="playersDetected">0</div>
+                        <div class="stat-label">Players Detected</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="reidentifications">0</div>
+                        <div class="stat-label">Re-identifications</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="trackingAccuracy">0%</div>
+                        <div class="stat-label">Tracking Accuracy</div>
+                    </div>
+                </div>
+
+                <div class="player-list">
+                    <h4>Player Tracking History</h4>
+                    <div id="playerHistory" class="history-container"></div>
+                </div>
+            </div>
+        </main>
+
+        <div class="info-panel">
+            <h3>🎯 How It Works</h3>
+            <div class="info-steps">
+                <div class="step">
+                    <span class="step-number">1</span>
+                    <div class="step-content">
+                        <strong>Detection</strong>
+                        <p>YOLOv11 model detects players in each frame</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <div class="step-content">
+                        <strong>Feature Extraction</strong>
+                        <p>Extract visual features (color, shape, position)</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <div class="step-content">
+                        <strong>Tracking</strong>
+                        <p>Kalman filter predicts player positions</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <span class="step-number">4</span>
+                    <div class="step-content">
+                        <strong>Re-identification</strong>
+                        <p>Match players when they re-enter the frame</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="src/main.js"></script>
+</body>
+</html>
